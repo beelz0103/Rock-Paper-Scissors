@@ -11,12 +11,58 @@ function computerPlay() {
 
 
 function playRound (playerSelection, computerSelection) {
-    if (computerSelection == "Rock" && playerSelection == "Rock") {
+    if (computerSelection == playerSelection)
         return "Draw";
-    }
-}
 
-const playerSelection = "Rock"
-const computerSelection = computerPlay();
+    else if (computerSelection == "Rock") {
+    
+        if (playerSelection == "Paper") {
+            return "Player Wins";
+        }
+
+        else return "CP wins";    
+    }
+
+    else if (computerSelection == "Paper") {
+    
+        if (playerSelection == "Scissors") {
+            return "Player Wins";
+        }
+
+        else return "CP wins";    
+    }
+
+    else if (computerSelection == "Scissors") {
+    
+        if (playerSelection == "Rock") {
+            return "Player Wins";
+        }
+
+        else return "CP wins";    
+    }
+
+    }
+
+let playerSelection = "Scissors";
+
+let computerSelection = computerPlay();
+
+console.log(`CP_${computerSelection} vs PY_${playerSelection}`);
+
+console.log(playRound (playerSelection, computerSelection));
+
+playerSelection = "Rock";
+
+computerSelection = computerPlay();
+
+console.log(`CP_${computerSelection} vs PY_${playerSelection}`);
+
+console.log(playRound (playerSelection, computerSelection));
+
+playerSelection = "Paper";
+
+computerSelection = computerPlay();
+
+console.log(`CP_${computerSelection} vs PY_${playerSelection}`);
 
 console.log(playRound (playerSelection, computerSelection));
