@@ -1,3 +1,6 @@
+let playerSelection;
+let computerSelection;
+
 function computerPlay() {
     let cmselector = Math.floor(Math.random() * (4 - 1) + 1);
     if (cmselector === 1) {
@@ -11,8 +14,10 @@ function computerPlay() {
 
 
 function playRound (playerSelection, computerSelection) {
-    if (computerSelection == playerSelection)
+
+    if (computerSelection == playerSelection) {
         return "Draw";
+    }
 
     else if (computerSelection == "Rock") {
     
@@ -40,29 +45,15 @@ function playRound (playerSelection, computerSelection) {
 
         else return "CP wins";    
     }
-
     }
 
-let playerSelection = "Scissors";
+function play() {
+    for (let i = 1; i <= 1; i++) {
+        console.log(`Round ${i} start:`);
+        playerSelection = prompt(`Choose your move: Rock, Paper, Scissors`);
+        computerSelection = computerPlay();
+        console.log(`PL${playerSelection} vs CP${computerSelection}, ${playRound(playerSelection, computerSelection)}`);
+    }
+}
 
-let computerSelection = computerPlay();
-
-console.log(`CP_${computerSelection} vs PY_${playerSelection}`);
-
-console.log(playRound (playerSelection, computerSelection));
-
-playerSelection = "Rock";
-
-computerSelection = computerPlay();
-
-console.log(`CP_${computerSelection} vs PY_${playerSelection}`);
-
-console.log(playRound (playerSelection, computerSelection));
-
-playerSelection = "Paper";
-
-computerSelection = computerPlay();
-
-console.log(`CP_${computerSelection} vs PY_${playerSelection}`);
-
-console.log(playRound (playerSelection, computerSelection));
+play();
