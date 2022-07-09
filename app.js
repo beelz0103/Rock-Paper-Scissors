@@ -80,7 +80,7 @@ function play() {
     console.log(`Start game`);
     console.log(`Inital score: Player ${playerScore} and Computer ${computerScore}`);
     i = 1;
-    while (i < 11) {
+    while (i < 6) {
         playerSelection = capitalize(prompt(`Choose your move: Rock, Paper, Scissors, press cancel or esc to exit`));
 
         if (playerSelection == `null`) {
