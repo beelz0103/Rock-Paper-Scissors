@@ -47,13 +47,19 @@ function playRound (playerSelection, computerSelection) {
     }
     }
 
+function capitalize(string) {
+    a = string.slice(0,1);
+    b = a.toUpperCase();
+    c = string.slice(1);
+    d = c.toLowerCase();
+    return b+d;
+}
+
 function play() {
     for (let i = 1; i <= 1; i++) {
         console.log(`Round ${i} start:`);
-        playerSelection = prompt(`Choose your move: Rock, Paper, Scissors`);
+        playerSelection = capitalize(prompt(`Choose your move: Rock, Paper, Scissors`));
         computerSelection = computerPlay();
         console.log(`PL${playerSelection} vs CP${computerSelection}, ${playRound(playerSelection, computerSelection)}`);
     }
 }
-
-play();
