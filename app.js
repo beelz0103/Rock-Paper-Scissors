@@ -1,5 +1,7 @@
 let playerSelection;
 let computerSelection;
+let playerScore = 0;
+let computerScore = 0;
 
 function computerPlay() {
     let cmselector = Math.floor(Math.random() * (4 - 1) + 1);
@@ -55,11 +57,52 @@ function capitalize(string) {
     return b+d;
 }
 
+function whowon (plScore, cpScore) {
+    if (plScore > cpScore) {
+        return `Player wins`;
+    }
+
+    else if (plScore == cpScore) {
+        return `Draw`;
+    }
+    else {
+        return `Computer wins`;
+    }
+}
+
 function play() {
-    for (let i = 1; i <= 1; i++) {
+    console.log(`Start game`);
+    for (let i = 1; i <= 5; i++) {
+        console.log(`Player ${playerScore} and Computer ${computerScore}`);
         console.log(`Round ${i} start:`);
-        playerSelection = capitalize(prompt(`Choose your move: Rock, Paper, Scissors`));
-        computerSelection = computerPlay();
-        console.log(`PL${playerSelection} vs CP${computerSelection}, ${playRound(playerSelection, computerSelection)}`);
+
+        let z = 0;
+        while (z<1) {
+        playerSelection = prompt(`Choose your move: Rock, Paper, Scissors, press cancel or esc to exit`);
+
+        if (playerSelection == null) {
+        alert(`You have quit at round ${i}.`)
+        alert(whowon(playerScore, computerScore));
+        z++;
+        break;
+        }
+
+        else {
+        playerSelection = capitalize(playerSelection);
+        if (playerSelection == `Rock` || playerSelection == `Paper` || playerSelection == `Scissors`) {
+            computerSelection = computerPlay();
+            console.log(`PL${playerSelection} vs CP${computerSelection}`);
+            let match = playRound(playerSelection, computerSelection);
+            console.log(match);
+            z++;
+        }
+        
+        else {
+            alert(`Invalid Input`)
+        }
+        }
+    }
+    
+
     }
 }
