@@ -50,11 +50,16 @@ function playRound (playerSelection, computerSelection) {
     }
 
 function capitalize(string) {
+    if (string == null) {
+        return `null`;
+    }
+    else {
     a = string.slice(0,1);
     b = a.toUpperCase();
     c = string.slice(1);
     d = c.toLowerCase();
     return b+d;
+    }
 }
 
 function whowon (plScore, cpScore) {
@@ -72,37 +77,30 @@ function whowon (plScore, cpScore) {
 
 function play() {
     console.log(`Start game`);
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i <= 2; i++) {
         console.log(`Player ${playerScore} and Computer ${computerScore}`);
         console.log(`Round ${i} start:`);
 
-        let z = 0;
-        while (z<1) {
-        playerSelection = prompt(`Choose your move: Rock, Paper, Scissors, press cancel or esc to exit`);
+        playerSelection = capitalize(prompt(`Choose your move: Rock, Paper, Scissors, press cancel or esc to exit`));
 
-        if (playerSelection == null) {
-        alert(`You have quit at round ${i}.`)
-        alert(whowon(playerScore, computerScore));
-        z++;
+        if (playerSelection == `null`) {
+        alert(`You have quit at round ${i}.`);
         break;
         }
 
-        else {
-        playerSelection = capitalize(playerSelection);
-        if (playerSelection == `Rock` || playerSelection == `Paper` || playerSelection == `Scissors`) {
+        else if (playerSelection == `Rock` || playerSelection == `Paper` || playerSelection == `Scissors`) {
             computerSelection = computerPlay();
             console.log(`PL${playerSelection} vs CP${computerSelection}`);
             let match = playRound(playerSelection, computerSelection);
             console.log(match);
-            z++;
         }
         
         else {
-            alert(`Invalid Input`)
+            alert(`Invalid Input`);
         }
-        }
-    }
+        }    
     
-
-    }
+    alert(whowon(playerScore, computerScore))
 }
+
+play();
