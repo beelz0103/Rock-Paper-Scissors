@@ -4,11 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <script src="app.js">
-        
-    </script>
+<div class="header">Rock Paper Scissors</div>
+<div id="greeting">Choose a move to start</div>
+<div id="scoreKeeperText"></div> 
+    
+
+<div class="container">
+<div class="container5">
+<div style="font-size:24px; font-weight: bold; text-align: center;">Player</div>
+<div id="playButtons">   
+    <div class = scoreDisplayer>
+    <img id = plIcon src="./images/player.png" alt="">
+    <div class="playerScore score">SCORE: 0</div>
+    </div> 
+    <div class="buttonFlex" id="playButton">
+    <img id = "Rock" src="./images/rock.png" alt="rock">
+    <img id = "Paper" src="./images/paper.png" alt="rock">
+    <img id = "Scissors" src="./images/scissors.png" alt="rock">
+    </div>
+</div>
+</div>
+
+<div class="container5">
+<div style="font-size:24px; font-weight: bold; text-align: center;">Computer</div>
+<div id="cpButtons"> 
+    <div class = scoreDisplayer>
+    <img id = cpIcon src="./images/computer.png" alt="">
+    <div class="computerScore score">SCORE: 0</div>
+    </div>
+    <div class="buttonFlex" id="cpButton">
+    <img id = "cpRock" src="./images/rock.png" alt="rock"> 
+    <img id = "cpPaper" src="./images/paper.png" alt="rock">
+    <img id = "cpScissors" src="./images/scissors.png" alt="rock">
+    </div>  
+</div>
+</div>
+
+</div>
+
+<div id="announcePlayer"></div>
+
+<script src="rps.js">
+</script>
+
+
 </body>
 </html>

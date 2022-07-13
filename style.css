@@ -1,0 +1,69 @@
+body {
+    background-color: blanchedalmond;
+    margin: 0;
+}
+
+.header {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(27, 85, 148);
+    background-color: black;
+}
+
+#greeting, #scoreKeeperText, #announcePlayer  {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+img {
+    height:125px;
+    width: auto;
+    background-color: lightgray;
+    border: 5px solid black;
+    border-radius: 10px;
+}
+
+.score {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+#playButtons, #cpButtons {
+    background-color: rgb(219, 163, 163);
+    border: 2px solid darkgreen;
+    border-radius: 10px;
+}
+
+.buttonFlex {
+    margin: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.scoreDisplayer {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+#cpIcon, #plIcon {
+    height: 50px;
+    width: auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: lightcyan;
+    padding: 2px;
+}
