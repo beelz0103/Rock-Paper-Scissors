@@ -112,7 +112,7 @@ tet2.forEach((value) => {
         console.log(e.target);
         turnBack();
         turnBack2();
-        e.target.style.backgroundColor = "lightyellow";
+        e.target.style.backgroundColor = "#682e2e";
         console.log(e.target.id);
         play(e.target.id);
     }) 
@@ -120,13 +120,13 @@ tet2.forEach((value) => {
 
 function turnBack() {
     tet2.forEach((value) => {
-        value.style.backgroundColor = "lightgray";
+        value.style.backgroundColor = "#4a4f57";
     })
 }
 
 function turnBack2() {
     tet1.forEach((value) => {
-        value.style.backgroundColor = "lightgray";
+        value.style.backgroundColor = "#4a4f57";
     })
 }
 
@@ -135,14 +135,14 @@ console.log(compSel)
 
 function hightlightCPmove (compSel) {
     if (compSel === "Scissors") {
-    document.querySelector("#cpScissors").style.backgroundColor = "lightblue";
+    document.querySelector("#cpScissors").style.backgroundColor = "#1e3652";
     }
 
     else if(compSel === "Rock") {
-    document.querySelector("#cpRock").style.backgroundColor = "lightblue";        
+    document.querySelector("#cpRock").style.backgroundColor = "#1e3652";        
     }
 
     else {
-    document.querySelector("#cpPaper").style.backgroundColor = "lightblue";      
+    document.querySelector("#cpPaper").style.backgroundColor = "#1e3652";      
     }
 } 
