@@ -8,7 +8,7 @@ body {
     margin: 0;
 }
 
-.header {
+#header {
     font-size: 50px;
     font-weight: bold;
     text-align: center;
@@ -18,7 +18,7 @@ body {
     font-style: italic;
 }
 
-#greeting, #scoreKeeperText, #announcePlayer  {
+#greeting, #scoreKeeperText, #announceResult  {
     font-size: 32px;
     font-weight: bold;
     text-align: center;
@@ -83,11 +83,11 @@ img {
     transform: scaleX(-1);
 }
 
-#greeting, #announcePlayer, #scoreKeeperText {
+#greeting, #announceResult, #scoreKeeperText {
     font-family: 'Lobster', cursive;
     margin: 5px;
 }
 
-#greeting, #announcePlayer {
+#greeting, #announceResult {
     font-family: 'Lobster', cursive;
 }

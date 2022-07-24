@@ -12,49 +12,45 @@
 </head>
 
 <body>
-<div class="header">Rock Paper Scissors</div>
+
+<div id="header">Rock Paper Scissors</div>
 <div id="greeting">Choose a move to start</div>
-<div id="scoreKeeperText"></div> 
-    
+<div id="scoreKeeperText"></div>     
 
 <div class="container">
-<div class="container5">
-<div style="font-size:24px; font-weight: bold; text-align: center;">Player</div>
-<div id="playButtons">   
-    <div class = scoreDisplayer>
-    <img id = plIcon src="./images/player.png" alt="">
-    <div class="playerScore score">SCORE: 0</div>
-    </div> 
-    <div class="buttonFlex" id="playButton">
-    <img id = "Rock" src="./images/rock.png" alt="rock">
-    <img id = "Paper" src="./images/paper.png" alt="rock">
-    <img id = "Scissors" src="./images/scissors.png" alt="rock">
+<div>
+    <div style="font-size:24px; font-weight: bold; text-align: center;">Player</div>
+    <div id="playButtons">   
+        <div class = scoreDisplayer>
+            <img id = plIcon src="./images/player.png" alt="">
+            <div class="playerScore score">SCORE: 0</div>
+        </div> 
+        <div class="buttonFlex" id="playButton">
+            <img id = "Rock" src="./images/rock.png" alt="rock">
+            <img id = "Paper" src="./images/paper.png" alt="rock">
+            <img id = "Scissors" src="./images/scissors.png" alt="rock">
+        </div>
+    </div>
+</div>
+<div>
+    <div style="font-size:24px; font-weight: bold; text-align: center;">Computer</div>
+    <div id="cpButtons"> 
+        <div class = scoreDisplayer>
+            <img id = cpIcon src="./images/computer.png" alt="">
+            <div class="computerScore score">SCORE: 0</div>
+        </div>
+        <div class="buttonFlex" id="cpButton">
+            <img id = "cpRock" src="./images/rock.png" alt="rock"> 
+            <img id = "cpPaper" src="./images/paper.png" alt="rock">
+            <img id = "cpScissors" src="./images/scissors.png" alt="rock">
+        </div>  
     </div>
 </div>
 </div>
 
-<div class="container5">
-<div style="font-size:24px; font-weight: bold; text-align: center;">Computer</div>
-<div id="cpButtons"> 
-    <div class = scoreDisplayer>
-    <img id = cpIcon src="./images/computer.png" alt="">
-    <div class="computerScore score">SCORE: 0</div>
-    </div>
-    <div class="buttonFlex" id="cpButton">
-    <img id = "cpRock" src="./images/rock.png" alt="rock"> 
-    <img id = "cpPaper" src="./images/paper.png" alt="rock">
-    <img id = "cpScissors" src="./images/scissors.png" alt="rock">
-    </div>  
-</div>
-</div>
+<div id="announceResult"></div>
 
-</div>
-
-<div id="announcePlayer"></div>
-
-<script src="rps.js">
-</script>
-
+<script src="rps.js"></script>
 
 </body>
 </html>

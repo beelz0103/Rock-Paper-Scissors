@@ -4,20 +4,26 @@ let playerScore = 0;
 let computerScore = 0;
 let drawCount = 0;
 
+const scoreKeeperText = document.querySelector('#scoreKeeperText');
+const greeting = document.querySelector('#greeting');
+const cpScoreText = document.querySelector('.computerScore');
+const plScoreText = document.querySelector('.playerScore')
+const announceResult = document.querySelector('#announceResult')
+const revertCpColor = document.querySelectorAll('#cpButton img') 
+const playerButtons = document.querySelectorAll('#playButton img')
+
 function computerPlay() {
-    let cmselector = Math.floor(Math.random() * (4 - 1) + 1);
-    if (cmselector === 1) {
+    let cmSelector = Math.floor(Math.random() * (4 - 1) + 1);
+    if (cmSelector === 1) {
         return "Rock";
-    } else if (cmselector === 2) {
+    } else if (cmSelector === 2) {
         return "Paper";
     } else {
         return "Scissors";
     }
 }
 
-
-function playRound (playerSelection, computerSelection) {
-
+function playRound (playerSelection, computerSelection) {    
     if (computerSelection == playerSelection) {
         return "draw";
     }
@@ -50,88 +56,65 @@ function playRound (playerSelection, computerSelection) {
     }
 }
 
-function play(playerMove) {    
-    document.querySelector("#greeting").textContent = "";
+function playGame(playerMove) {    
+    greeting.textContent = "";
     playerSelection = playerMove;
     computerSelection = computerPlay();
+   
     hightlightCPmove(computerSelection);
     const match = playRound(playerSelection, computerSelection);        
 
-    if (match == `computer wins`) {
-    console.log(`Match result: Computer wins`)
+    if (match == `computer wins`) {  
     computerScore = computerScore + 1;
-    document.querySelector('#scoreKeeperText').textContent = `${playerSelection} loses to ${computerSelection}, you lose.`;
-    document.querySelector(".computerScore").textContent = `SCORE: ${computerScore}`;
+    scoreKeeperText.textContent = `${playerSelection} loses to ${computerSelection}, you lose.`;
+    cpScoreText.textContent = `SCORE: ${computerScore}`;
     }
 
-    else if (match == `player wins`) {
-    console.log(`Match result: Player wins`)
+    else if (match == `player wins`) { 
     playerScore = playerScore + 1;
-    document.querySelector('#scoreKeeperText').textContent = `${playerSelection} beats ${computerSelection}, you win.`;
-    document.querySelector('.playerScore').textContent = `SCORE: ${playerScore}`;
+    scoreKeeperText.textContent = `${playerSelection} beats ${computerSelection}, you win.`;
+    plScoreText.textContent = `SCORE: ${playerScore}`;
     }
 
     else {
-        drawCount = drawCount +1;
-        document.querySelector('#scoreKeeperText').textContent = `${playerSelection} vs ${computerSelection}, draw.`;
+    drawCount = drawCount +1;
+    scoreKeeperText.textContent = `${playerSelection} vs ${computerSelection}, draw.`;
     }
 
     if (playerScore == 5 || computerScore == 5) {
         document.querySelector('#playButtons').style.pointerEvents = "none";
 
         if (playerScore > computerScore) {
-        document.querySelector('#announcePlayer').textContent = `You won the game. YAY! Refresh to play again.`;
+        announceResult.textContent = `You won the game. YAY! Refresh to play again.`;
         }
-
+        
         else {
-            document.querySelector('#announcePlayer').textContent = `You lost to a computer. Refresh to play again.`;
+        announceResult.textContent = `You lost to a computer. Refresh to play again.`;
         }
 
-    
-        console.log(playerScore);
-        console.log(computerScore);
     }
-
-
-    
-    console.log(`Computer score: ${computerScore}`)
-    console.log(`Player score: ${playerScore}`)
-    console.log(`Draws: ${drawCount}`)
 }
 
-
-tet1 = document.querySelectorAll('#cpButton img') 
-tet2 = document.querySelectorAll('#playButton img')
-console.log(tet1);
-console.log(tet2);
-
-
-
-tet2.forEach((value) => {    
+playerButtons.forEach((value) => {    
     value.addEventListener('click', (e) => { 
-        console.log(e.target);
-        turnBack();
-        turnBack2();
+        revertPlayerColor();
+        revertCPColor()
         e.target.style.backgroundColor = "#682e2e";
-        console.log(e.target.id);
-        play(e.target.id);
+        playGame(e.target.id);
     }) 
 });
 
-function turnBack() {
-    tet2.forEach((value) => {
+function revertPlayerColor() {
+    playerButtons.forEach((value) => {
         value.style.backgroundColor = "#4a4f57";
     })
 }
 
-function turnBack2() {
-    tet1.forEach((value) => {
+function revertCPColor() {
+    revertCpColor.forEach((value) => {
         value.style.backgroundColor = "#4a4f57";
     })
 }
-
-let compSel = computerPlay();
-console.log(compSel)
 
 function hightlightCPmove (compSel) {
     if (compSel === "Scissors") {
